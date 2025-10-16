@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:technical_task/Model/product_data.dart';
 import 'package:technical_task/Views/cart_page.dart';
+
+import '../Providers/cart_provider.dart';
 
 class ProductDetails extends StatelessWidget {
   final Product product;
@@ -114,13 +117,20 @@ class ProductDetails extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(context,
-                          MaterialPageRoute(
-                            builder: (_) => CartPage(),
-                          ),
-                        );
-                      },
+                        onPressed: () {
+                          Provider.of<CartProvider>(context, listen: false)
+                              .addProduct(product);
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Added to Cart') ,
+                                backgroundColor: Colors.green,)
+                          );
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CartPage()),
+                          );
+                        },
                       child: Text("Add to Cart", style: TextStyle(
                           color: Colors.white, fontSize: 16,
                         ),
