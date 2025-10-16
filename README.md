@@ -1,16 +1,66 @@
-# technical_task
+# Technical Task
 
-A new Flutter project.
+A Flutter application demonstrating state management, API integration, and cart functionality using **Provider**. This project is part of a technical assessment focused on showcasing clean architecture, UI implementation, and problem-solving in Flutter.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
+- Fetch products from FakeStore API
+- Add/Remove products from cart
+- Favorites functionality
+- State Management using **Provider**
+- Navigation between Product List, Details, and Cart pages
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+##  Folder Structure
+```
+lib/
+ ├─ models/         # Data models (Product, cart)
+ ├─ services/       # API services
+ ├─ providers/      # State management (CartProvider)
+ ├─ views/          # UI Screens (Home, Details, Cart)
+ ├─ widgets/        # Reusable widgets
+ └─ main.dart       # Entry point
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## State Management – Why Provider?
+Provider was chosen for its:
+- Simplicity and lightweight nature
+- Reactive UI updates
+- Easy scalability for real projects
+
+It manages global states like cart items and favorites efficiently.
+
+---
+
+## API Used
+```
+https://fakestoreapi.com/products
+https://fakestoreapi.com/products/categories
+```
+- `GET /products` → Fetch all products
+- `GET /products/{id}` → Fetch single product details
+
+---
+
+##  Setup Instructions
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/amiramahmoud925/technical_task.git
+```
+2️⃣ Install dependencies:
+```bash
+flutter pub get
+```
+3️⃣ Run the app:
+```bash
+flutter run
+```
+
+---
+
+## GitHub URL
+https://github.com/amiramahmoud925/technical_task/
