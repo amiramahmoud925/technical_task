@@ -15,6 +15,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> screens = [
     HomePage(),
     CartPage(),
+    HomePage(),
+    HomePage(),
   ];
 
   @override
